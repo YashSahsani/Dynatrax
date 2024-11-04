@@ -25,6 +25,7 @@ opentelemetry-semantic-conventions==0.48b0
 opentelemetry-util-http==0.48b0
 packaging==24.1
 protobuf==4.25.5
+python-dotenv==1.0.1
 requests==2.32.3
 setuptools==75.3.0
 typing_extensions==4.12.2
