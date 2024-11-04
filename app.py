@@ -21,6 +21,7 @@ logger = opentelemetry_tracer.get_logger()
 @app.before_request
 def before_request():
     counter.add(1)
+    logger.setLevel(logging.DEBUG)
     logger.info("Request received")
     request.start_time = time()
     request.main_span = tracer.start_span("python-otel")
@@ -62,6 +63,12 @@ def home():
 def greet(name):
     logger.info("Greet route called")
     return f"Hello, {name}!"
+
+@app.route('/log')
+def log():
+    logger.info("Log route called")
+    return "Log route called"
+
 
 if __name__ == "__main__":
     opentelemetry_tracer.init_all()

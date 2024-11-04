@@ -52,45 +52,51 @@ Dynatrax requires the following environment variables to communicate with Dynatr
 1. **Clone the repository**:
    ```bash
    git clone 
-   cd Dynatrax```
+   cd Dynatrax
+   ```
+2. **Setup virtualenv**:
+    ```bash
+    python3 -m venv .venv
+    source .venv\bin\activate
+    ```
 2. **Install dependencies**:
     
-    bash
+   
     
-    Copy code
-    
-    `pip install -r requirements.txt`
+    ```bash
+    pip install -r requirements.txt
+    ```
     
 3. **Set up environment variables**: Configure your environment variables by creating a `.env` file or exporting them directly in the terminal.
     
     `.env` example:
     
-    env
     
-    Copy code
     
-    `DT_API_URL=https://your-dynatrace-domain/api/v2/otlp
-     DT_API_TOKEN=your_dynatrace_api_token`
+    ```bash
+    DT_API_URL=https://your-dynatrace-domain/api/v2/otlp
+    DT_API_TOKEN=your_dynatrace_api_token
+     ```
     
 5. **Initialize OpenTelemetry components**:
     
     - Dynatrax uses OpenTelemetry SDKs for manual instrumentation of traces, metrics, and logs.
+    [here](https://docs.dynatrace.com/docs/extend-dynatrace/opentelemetry/walkthroughs/python/python-manual)
     - Verify your `requirements.txt` includes necessary OpenTelemetry packages:
-        
-        text
-        
-        Copy code
-        
         `opentelemetry-api opentelemetry-sdk opentelemetry-exporter-otlp-proto-http Flask`
         
 
 ## Project Structure
 
-plaintext
 
-Copy code
-
-`Dynatrax/ ├── app.py             # Main application file ├── README.md          # Project documentation ├── requirements.txt   # Python dependencies └── .env               # Environment variables (not included in repository)`
+```
+ Dynatrax/ 
+    ├──  opentelemetry_tracer.py
+    ├── app.py             # Main application file 
+    ├── README.md          # Project documentation
+    ├── requirements.txt   # Python dependencies 
+    └── .env               # Environment variables (not included in repository) 
+```
 
 ## Usage
 
@@ -98,11 +104,9 @@ Copy code
 
 To run Dynatrax, execute the following command:
 
-bash
-
-Copy code
-
-`flask run`
+```
+python app.py
+```
 
 The app should start on `http://localhost:5000`. You can visit this URL to generate sample traces and metrics.
 
@@ -115,11 +119,10 @@ Dynatrax includes sample endpoints for testing:
 
 Example:
 
-bash
 
-Copy code
-
-`curl http://localhost:5000/greet/John`
+```bash
+curl http://localhost:5000/greet/John
+```
 
 This will generate a trace in Dynatrace showing the request path, response time, and any custom attributes.
 
@@ -143,14 +146,20 @@ OpenTelemetry settings are configured in `app.py`:
     - Check that you’re using the correct API URL format: `https://<your_dynatrace_url>/api/v2/otlp`.
     - Confirm network connectivity from your application to Dynatrace.
     
-3. **Logs Not Showing**:
-    
-    - Logs might take a moment to appear. Ensure `BatchLogRecordProcessor` and `OTLPLogExporter` are configured correctly.
 
-## Contributing
+## **Execution Summary**:
+
+
+
+
+## TODO:
+
+1) Send Logs to Dynatrace
+
+## Contributing:
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-## License
+## License:
 
 Dynatrax is open-source and available under the MIT License. See `LICENSE` for details.
