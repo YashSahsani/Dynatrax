@@ -151,6 +151,21 @@ OpenTelemetry settings are configured in `app.py`:
 
 
 
+1) It creates a service 
+<img width="1332" alt="image" src="https://github.com/user-attachments/assets/f62c8753-fe81-4f9f-b417-12d2aae45617">
+2) Add Custom metrics
+<img width="1332" alt="Screenshot 2024-11-03 at 9 28 25 PM" src="https://github.com/user-attachments/assets/295981ce-8468-4845-86bc-3efa02152d79">
+3) New Distributed Traces look
+<img width="1293" alt="Screenshot 2024-11-03 at 9 25 59 PM" src="https://github.com/user-attachments/assets/d35099a8-7405-4f01-b2f7-204746aaca35">
+<img width="1332" alt="Screenshot 2024-11-03 at 9 29 12 PM" src="https://github.com/user-attachments/assets/a6e0530c-b109-478d-bea2-a2098b214630">
+4) Classic Distributed Traces look
+<img width="1332" alt="Screenshot 2024-11-03 at 9 31 09 PM" src="https://github.com/user-attachments/assets/ff340ff1-1009-4b58-8c70-c6fed03edd21">
+<img width="1332" alt="Screenshot 2024-11-03 at 9 31 24 PM" src="https://github.com/user-attachments/assets/8c3d364a-f55d-4bf8-b24c-1495f6b8dd72">
+<img width="1332" alt="Screenshot 2024-11-03 at 9 31 28 PM" src="https://github.com/user-attachments/assets/3abdde24-1425-4779-90dd-9f773c8733fa">
+
+
+
+
 
 ## TODO:
 
